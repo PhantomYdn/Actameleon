@@ -18,5 +18,11 @@
         "name": "twisters",
         "title": "Скороговорки",
         "url": "/scripts/twisters.json"
+    },
+    {
+        "name": "le_bourgeois_gentilhomme",
+        "title": "Мещанин во дворянстве",
+        "url": "/scripts/le_bourgeois_gentilhomme.json"
     }
+
 ]
