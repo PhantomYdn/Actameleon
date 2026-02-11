@@ -82,5 +82,4 @@ public/scripts/       # Play script data (JSON + source MD)
 1. **No tests exist** - Be careful with refactoring; manually verify changes
 2. **No linter** - Follow existing code patterns for consistency
 3. **Script data**: JSON files in `public/scripts/` generated from markdown via `parse_regexp.js`
-4. **Environment**: `.env` file exists for OpenAI API key (used by `parse_openai.js` utility)
-5. **Multilingual**: Scripts support multiple languages via `script.language` property (default: 'ru')
+4. **Multilingual**: Scripts support multiple languages via `script.language` property (default: 'ru')
