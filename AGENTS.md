@@ -83,3 +83,4 @@ public/scripts/       # Play script data (JSON + source MD)
 2. **No linter** - Follow existing code patterns for consistency
 3. **Script data**: JSON files in `public/scripts/` generated from markdown via `parse_regexp.js`
 4. **Multilingual**: Scripts support multiple languages via `script.language` property (default: 'ru')
+5. **No play content in docs** - Don't include play-specific information (titles, quotes, character names) in documentation; scripts are runtime data
