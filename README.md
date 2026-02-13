@@ -25,7 +25,7 @@ Theatrical script reader for rehearsal practice.
 ### Next Steps
 - [x] Reset filters - per-section reset buttons in filter sheet
 - [ ] Rehearsal profiles - save/load different filter presets for quick switching
-- [ ] Auto-scroll during playback - keep currently spoken line visible
+- [x] Auto-scroll during playback - keep currently spoken line visible
 - [x] Mobile-friendly filters - bottom sheet with searchable lists
 - [x] UI/UX improvements - mobile-first redesign with highlight mode
 
