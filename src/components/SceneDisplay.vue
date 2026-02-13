@@ -1,6 +1,6 @@
 <template>
   <div class="scene p-4 border rounded-lg mb-4 sm:p-6 md:p-8 lg:p-10 xl:p-12" :data-scene="scene.sceneNumber">
-    <h2 class="text-2xl font-semibold mb-2 sm:text-3xl">{{ scene.sceneTitle ?? `Scene ${scene.sceneNumber}` }}<span v-if="scene.title">: {{ scene.title }}</span></h2>
+    <h2 class="text-2xl font-semibold mb-2 sm:text-3xl break-words">{{ scene.sceneTitle ?? `Scene ${scene.sceneNumber}` }}<span v-if="scene.title">: {{ scene.title }}</span></h2>
     <div v-if="scene.setting" class="italic mb-2">{{ scene.setting }}</div>
     <LineDisplay v-for="(line, index) in scene.lines" :key="`${scene.sceneNumber}-${index}`" :line="line" :line-id="`line-${scene.sceneNumber}-${index}`" :hide-to-check="hideToCheck"/>
   </div>
