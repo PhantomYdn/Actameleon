@@ -70,6 +70,29 @@ button:focus-visible {
 
 
 
+/* Floating Action Buttons */
+.fab-container {
+  @apply fixed bottom-4 right-4 flex flex-col gap-3 items-end z-40;
+}
+
+.fab {
+  @apply flex items-center gap-2 px-4 py-3 rounded-full shadow-lg transition-all;
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.fab-read {
+  @apply bg-green-500 hover:bg-green-600;
+}
+
+.fab-top {
+  @apply bg-gray-500 hover:bg-gray-600;
+}
+
+.fab-label {
+  @apply text-sm font-medium;
+}
+
+/* Legacy classes for backward compatibility */
 .scroll2top {
   @apply fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-700;
 }
@@ -80,6 +103,80 @@ button:focus-visible {
 
 .show-text-button {
   @apply inline px-3 py-1 text-sm bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-700;
+}
+
+/* Toggle Switch */
+.toggle-row {
+  @apply flex items-center gap-3 cursor-pointer select-none py-2;
+}
+
+.toggle-switch {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ease-in-out;
+  @apply bg-gray-300 dark:bg-gray-600;
+}
+
+.toggle-switch.active {
+  @apply bg-blue-500;
+}
+
+.toggle-switch::after {
+  content: '';
+  @apply absolute left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-200 ease-in-out;
+}
+
+.toggle-switch.active::after {
+  @apply translate-x-5;
+}
+
+/* Chip Selector */
+.chip-container {
+  @apply flex flex-wrap gap-2 p-2 border rounded-lg min-h-[44px];
+}
+
+.chip {
+  @apply px-3 py-1.5 text-sm rounded-full border transition-all duration-150 cursor-pointer;
+  @apply border-gray-300 dark:border-gray-600 hover:border-blue-400;
+}
+
+.chip.selected {
+  @apply bg-blue-500 text-white border-blue-500;
+}
+
+.chip.settings-chip {
+  @apply border-dashed italic;
+}
+
+.chip-header {
+  @apply flex items-center justify-between mb-2;
+}
+
+.chip-clear {
+  @apply text-sm text-blue-500 hover:text-blue-700 cursor-pointer;
+}
+
+/* Mobile: horizontal scroll for chips */
+@media (max-width: 640px) {
+  .chip-container {
+    @apply flex-nowrap overflow-x-auto pb-2 -mx-2 px-2;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .chip-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .chip {
+    @apply flex-shrink-0;
+  }
+  
+  .fab {
+    @apply px-3 py-2;
+  }
+  
+  .fab-label {
+    @apply hidden;
+  }
 }
 
 
@@ -101,6 +198,12 @@ button:focus-visible {
 .line-clue {
   @apply flex flex-col sm:flex-row items-start text-left border-b;
   color: #646cff;
+}
+
+.line-highlight {
+  @apply flex flex-col sm:flex-row items-start text-left border-b;
+  @apply bg-yellow-50 dark:bg-yellow-900/20;
+  @apply border-l-4 border-l-yellow-500 pl-3;
 }
 
 .line-selected {
