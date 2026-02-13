@@ -11,18 +11,22 @@ const props = defineProps({
 const isOpen = ref(false);
 const currentScene = ref(null);
 
-// Flatten scenes from all acts
+// Flatten scenes from all acts (only active/visible ones)
 const allScenes = computed(() => {
   if (!props.script.acts) return [];
-  return props.script.acts.flatMap(act => 
-    act.scenes.map(scene => ({
-      actNumber: act.actNumber,
-      actTitle: act.actTitle,
-      sceneNumber: scene.sceneNumber,
-      sceneTitle: scene.sceneTitle,
-      id: `scene-${act.actNumber}-${scene.sceneNumber}`
-    }))
-  );
+  return props.script.acts
+    .filter(act => act.active)
+    .flatMap(act => 
+      act.scenes
+        .filter(scene => scene.active)
+        .map(scene => ({
+          actNumber: act.actNumber,
+          actTitle: act.actTitle,
+          sceneNumber: scene.sceneNumber,
+          sceneTitle: scene.sceneTitle,
+          id: `scene-${act.actNumber}-${scene.sceneNumber}`
+        }))
+    );
 });
 
 const toggleDropdown = () => {
