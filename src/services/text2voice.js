@@ -253,6 +253,10 @@ const cancel = () => {
     if(available) {
         speechSynthesis.cancel();
         clearTimeout(pauseTimeout);
+        if(currentLine) {
+            currentLine.selected = false;
+            currentLine = null;
+        }
         speaking.value = false;
         releaseWakeLock();
         cleanupAutoScroll();
