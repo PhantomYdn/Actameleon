@@ -11,6 +11,10 @@ Theatrical script reader for rehearsal practice.
 - "Show Lines Prior" - see cue lines before your part
 - Hide text mode - self-test your memorization
 - Text-to-speech - listen to the script read aloud
+- "Skip my lines" TTS mode - hear other actors, get a ding + pause to say your lines
+- Adjustable pause speed (Fast/Medium/Slow) for rehearsal timing
+- Skip to next line and play from any scene during TTS playback
+- Re-hide revealed lines in self-test mode
 - Dark/light mode (follows system preference)
 - Multilingual script support
 - Full-screen script selector with metadata
@@ -32,7 +36,7 @@ Theatrical script reader for rehearsal practice.
 ### Planned Features
 - [ ] Keyboard shortcuts - space to play/pause, arrows for navigation
 - [ ] Loading indicators - show progress while scripts load
-- [ ] Playback controls - pause/resume, speed adjustment
+- [x] Playback controls - skip line, play from scene, speed adjustment
 - [ ] Voice selection - choose from available TTS voices
 - [ ] Print view - printer-friendly layout for rehearsals
 - [ ] PWA support - offline access and installable app

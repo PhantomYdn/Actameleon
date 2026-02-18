@@ -56,7 +56,11 @@ src/
 ├── App.vue           # Root component (script selection, config)
 ├── style.css         # Global styles + Tailwind
 ├── assets/           # scripts.json (script registry)
-├── components/       # ConfigPanel, ScriptDisplay, ActDisplay, SceneDisplay, LineDisplay
+├── components/       # Vue components
+│   ├── ActDisplay, SceneDisplay, LineDisplay, ScriptDisplay  # Script rendering
+│   ├── FilterSheet, ActiveFilters, SceneNav                  # Filter UI
+│   ├── ScriptSelector                                        # Script picker
+│   └── ui/           # Reusable UI primitives (BottomSheet, FullScreenModal, etc.)
 └── services/         # text2voice.js (Web Speech API wrapper)
 public/scripts/       # Play script data (JSON + source MD)
 ```
