@@ -2,7 +2,7 @@
 
 Theatrical script reader for rehearsal practice.
 
-**[Live Demo](https://actameleon.orienteer.org/)**
+**[Live Demo](https://actameleon.theatrechameleon.org/)**
 
 ## Features
 
