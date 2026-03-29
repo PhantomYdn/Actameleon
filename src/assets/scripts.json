@@ -23,6 +23,11 @@
         "name": "le_bourgeois_gentilhomme",
         "title": "Мещанин во дворянстве",
         "url": "/scripts/le_bourgeois_gentilhomme.json"
+    },
+    {
+        "name": "dreams_about_bruriah",
+        "title": "Сны о Брурии",
+        "url": "/scripts/Dreams_about_Bruriah.json"
     }
 
 ]
