@@ -28,6 +28,11 @@
         "name": "dreams_about_bruriah",
         "title": "Сны о Брурии",
         "url": "/scripts/Dreams_about_Bruriah.json"
+    },
+    {
+        "name": "comedy",
+        "title": "Комедия Положений",
+        "url": "/scripts/comedy.json"
     }
 
 ]
