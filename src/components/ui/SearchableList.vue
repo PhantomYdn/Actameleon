@@ -49,44 +49,46 @@ const resetSelection = () => {
 
 <template>
   <div class="searchable-list">
-    <div class="searchable-list-header">
-      <span class="searchable-list-title">
-        {{ title }}
-        <span v-if="selectedCount > 0" class="selected-badge">({{ selectedCount }} selected)</span>
-      </span>
-      <button 
-        v-if="selectedCount > 0" 
-        @click="resetSelection" 
-        class="reset-button"
-      >
-        Reset
-      </button>
-    </div>
-    
-    <div class="search-input-wrapper">
-      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input 
-        v-model="searchQuery"
-        type="text"
-        :placeholder="searchPlaceholder"
-        class="search-input"
-      />
-      <button 
-        v-if="searchQuery" 
-        @click="searchQuery = ''" 
-        class="clear-search"
-        aria-label="Clear search"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
+    <div class="searchable-list-sticky">
+      <div class="searchable-list-header">
+        <span class="searchable-list-title">
+          {{ title }}
+          <span v-if="selectedCount > 0" class="selected-badge">({{ selectedCount }} selected)</span>
+        </span>
+        <button
+          v-if="selectedCount > 0"
+          @click="resetSelection"
+          class="reset-button"
+        >
+          Reset
+        </button>
+      </div>
+
+      <div class="search-input-wrapper">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-      </button>
+        <input
+          v-model="searchQuery"
+          type="text"
+          :placeholder="searchPlaceholder"
+          class="search-input"
+        />
+        <button
+          v-if="searchQuery"
+          @click="searchQuery = ''"
+          class="clear-search"
+          aria-label="Clear search"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
-    
+
     <div class="list-container">
       <div v-if="filteredItems.length === 0" class="empty-state">
         No results found
@@ -116,6 +118,11 @@ const resetSelection = () => {
   @apply flex flex-col;
 }
 
+/* Header + search stay pinned: the sheet body is the only scroller now */
+.searchable-list-sticky {
+  @apply sticky top-0 z-10 bg-white dark:bg-gray-900;
+}
+
 .searchable-list-header {
   @apply flex items-center justify-between px-4 py-2;
 }
@@ -130,6 +137,7 @@ const resetSelection = () => {
 
 .reset-button {
   @apply text-sm text-blue-500 hover:text-blue-700;
+  @apply p-0 bg-transparent border-none;
 }
 
 .search-input-wrapper {
@@ -150,10 +158,11 @@ const resetSelection = () => {
 .clear-search {
   @apply absolute right-3 top-1/2 -translate-y-1/2;
   @apply text-gray-400 hover:text-gray-600;
+  @apply p-0 bg-transparent border-none leading-none;
 }
 
 .list-container {
-  @apply max-h-48 overflow-y-auto;
+  @apply flex flex-col;
 }
 
 .empty-state {

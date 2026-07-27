@@ -19,7 +19,7 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['close']);
+defineEmits(['close']);
 
 // Build actors list with line counts
 const actorItems = computed(() => {
@@ -192,7 +192,9 @@ const speedIndex = computed(() => {
       <!-- Options Section -->
       <div class="section-divider"></div>
       <div class="options-section">
-        <div class="section-title px-4 py-2">Options</div>
+        <div class="options-header">
+          <span class="section-title">Options</span>
+        </div>
         
         <label class="option-row">
           <span class="option-label">Show cue lines</span>
@@ -280,6 +282,7 @@ const speedIndex = computed(() => {
 
 .acts-header {
   @apply flex items-center justify-between px-4 py-2;
+  @apply sticky top-0 z-10 bg-white dark:bg-gray-900;
 }
 
 .section-title {
@@ -288,10 +291,11 @@ const speedIndex = computed(() => {
 
 .reset-button {
   @apply text-sm text-blue-500 hover:text-blue-700;
+  @apply p-0 bg-transparent border-none;
 }
 
 .acts-list {
-  @apply max-h-64 overflow-y-auto;
+  @apply flex flex-col;
 }
 
 .scene-item {
@@ -306,6 +310,11 @@ const speedIndex = computed(() => {
 
 .options-section {
   @apply py-2;
+}
+
+.options-header {
+  @apply px-4 py-2;
+  @apply sticky top-0 z-10 bg-white dark:bg-gray-900;
 }
 
 .option-row {
@@ -323,8 +332,9 @@ const speedIndex = computed(() => {
 }
 
 .toggle-btn {
-  @apply relative w-12 h-7 rounded-full;
+  @apply relative w-12 h-7 rounded-full flex-shrink-0;
   @apply bg-gray-300 dark:bg-gray-600;
+  @apply p-0 border-none;
   @apply transition-colors duration-200;
 }
 

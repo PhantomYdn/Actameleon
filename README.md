@@ -57,6 +57,18 @@ See [AGENTS.md](AGENTS.md) for detailed development guidelines.
 
 ## Recent Changes
 
+### Bottom Sheet Rewrite (Jul 2026)
+
+Replaced `@webzlodimir/vue-bottom-sheet` with an in-house bottom sheet:
+
+- **Single surface** - one background, one rounded edge, one drag handle (the library rendered a hardcoded white shell with its own handle underneath the app's dark panel)
+- **Proper dark mode** - the sheet is no longer a white strip in dark mode
+- **Scroll vs. swipe** - drag-to-close only fires from the handle, or from the body when its scroller is already at the top; the decision is locked once per gesture so scrolling a list never turns into a swipe-down
+- **Single scroll surface** - removed the nested `max-height` scrollers from the actor and act lists; section headers are sticky instead
+- **Content-driven height** - capped at `90dvh`, no one-shot JS measurement, plus `env(safe-area-inset-bottom)` padding
+
+**Dependencies removed:** `@webzlodimir/vue-bottom-sheet` (and its `hammerjs` dependency), `radix-vue` (unused).
+
 ### Mobile-First UI Redesign (Feb 2026)
 
 Complete redesign of the filter UI with mobile-first approach:
