@@ -15,7 +15,7 @@ npm run preview      # Preview production build locally
 npm run deploy       # Deploy to GitHub Pages
 
 # Parse markdown scripts to JSON
-npm run parse-fools | parse-festival | parse-memorialpray | parse-twisters | parse-lbg
+npm run parse-fools | parse-festival | parse-memorialpray | parse-twisters | parse-lbg | parse-dreams | parse-comedy | parse-tristan
 ```
 
 ### Testing & Linting

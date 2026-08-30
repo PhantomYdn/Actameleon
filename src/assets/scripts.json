@@ -33,6 +33,11 @@
         "name": "comedy",
         "title": "Комедия Положений",
         "url": "/scripts/comedy.json"
+    },
+    {
+        "name": "tristan_and_izota",
+        "title": "Трышчан і Іжота",
+        "url": "/scripts/TristanAndIzota.json"
     }
 
 ]
